@@ -4,7 +4,8 @@ import SwiftTerm
 class ClickThroughTerminalView: LocalProcessTerminalView {
     var sessionId: UUID?
     private var keyMonitor: Any?
-    private var statusDebounceTimer: Timer?
+    private var statusDebounceWork: DispatchWorkItem?
+    private static let statusQueue = DispatchQueue(label: "com.notchy.status", qos: .utility)
 
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
 
@@ -118,14 +119,15 @@ class ClickThroughTerminalView: LocalProcessTerminalView {
 
         guard let id = sessionId else { return }
 
-        // Debounce status checks — the buffer can be mid-render when
-        // dataReceived fires, causing transient misreads that flicker
-        // between .working and .idle.
-        statusDebounceTimer?.invalidate()
-        statusDebounceTimer = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false) { [weak self] _ in
+        // Debounce status checks on a background queue to avoid
+        // blocking the main thread with per-cell buffer reads.
+        statusDebounceWork?.cancel()
+        let work = DispatchWorkItem { [weak self] in
             guard let self else { return }
             self.evaluateStatus(for: id)
         }
+        statusDebounceWork = work
+        Self.statusQueue.asyncAfter(deadline: .now() + 0.15, execute: work)
     }
 
     private func evaluateStatus(for id: UUID) {

@@ -181,15 +181,6 @@ class SessionStore {
             }
         }
 
-        // Stop terminals for projects that are no longer open in Xcode
-        for i in sessions.indices {
-            let session = sessions[i]
-            guard session.projectPath != nil else { continue } // skip plain terminals
-            if !detectedNames.contains(session.projectName) && session.hasStarted {
-                TerminalManager.shared.destroyTerminal(for: session.id)
-                sessions[i].hasStarted = false
-            }
-        }
 
         for project in projects {
             guard !sessions.contains(where: { $0.projectName == project.name }),

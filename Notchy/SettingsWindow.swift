@@ -2,9 +2,9 @@ import SwiftUI
 import AppKit
 
 enum SettingsTab: String, CaseIterable {
+    case about = "About"
     case general = "General"
     case integrations = "Integrations"
-    case about = "About"
 
     var icon: String {
         switch self {
@@ -16,11 +16,15 @@ enum SettingsTab: String, CaseIterable {
 }
 
 struct SettingsContentView: View {
-    @State private var selectedTab: SettingsTab = .general
+    @State private var selectedTab: SettingsTab = .about
     var onShowNotchChanged: ((Bool) -> Void)?
 
     var body: some View {
         TabView(selection: $selectedTab) {
+            AboutTab()
+                .tabItem { Label(SettingsTab.about.rawValue, systemImage: SettingsTab.about.icon) }
+                .tag(SettingsTab.about)
+
             GeneralTab(onShowNotchChanged: onShowNotchChanged)
                 .tabItem { Label(SettingsTab.general.rawValue, systemImage: SettingsTab.general.icon) }
                 .tag(SettingsTab.general)
@@ -28,10 +32,6 @@ struct SettingsContentView: View {
             IntegrationsTab()
                 .tabItem { Label(SettingsTab.integrations.rawValue, systemImage: SettingsTab.integrations.icon) }
                 .tag(SettingsTab.integrations)
-
-            AboutTab()
-                .tabItem { Label(SettingsTab.about.rawValue, systemImage: SettingsTab.about.icon) }
-                .tag(SettingsTab.about)
         }
         .frame(width: 450, height: 240)
     }

